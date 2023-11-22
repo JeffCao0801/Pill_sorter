@@ -124,13 +124,13 @@ int main(void)
     }
 
 
-	  htim2.Instance->CCR1 = 25;
+	  htim2.Instance->CCR1 = 12;
 		  HAL_Delay (2000);
 
-		  htim2.Instance->CCR1 = 75;
+		  htim2.Instance->CCR1 = 24;
 		 	  HAL_Delay (2000);
 
-		 htim2.Instance->CCR1 = 125;
+		 htim2.Instance->CCR1 = 36;
 		 HAL_Delay (2000);
 
   }
