@@ -103,11 +103,16 @@ int main(void)
   while (1)
   {
 
+    if(QMC_read(&module)==0)
+	  		{
+
+	  			Compas_Value=module.heading;
+	  		}
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
-    //  this is the lcd code
 
 	  htim2.Instance->CCR1 = 12;
 		  HAL_Delay (2000);
