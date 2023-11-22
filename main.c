@@ -113,8 +113,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    for (int i=1; i<15; i++){
-		  htim2.Instance->CCR1 = (i*100/15);
+  for (int i=2; i<8; i++){
+		  htim2.Instance->CCR1 = (i*100/7);
 		  	  HAL_Delay (5000);
 
 	  }
