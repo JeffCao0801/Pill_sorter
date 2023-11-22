@@ -107,6 +107,23 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+    //  this is the lcd code
+
+    int pressed = 0;
+  HD44780_Init(2);
+  HD44780_Clear();
+  HD44780_Backlight();
+  char snum[5];
+  for ( int x = 20; x >=1 ; x-- )
+    {
+      itoa(x, snum, 12);
+      HD44780_Clear();
+      HD44780_SetCursor(0,0);
+      HD44780_PrintStr(snum);
+      HAL_Delay (1000);
+    }
+
+
 	  htim2.Instance->CCR1 = 25;
 		  HAL_Delay (2000);
 
