@@ -103,21 +103,36 @@ int main(void)
   while (1)
   {
 
-    if(QMC_read(&module)==0)
-	  		{
-
-	  			Compas_Value=module.heading;
-	  		}
-
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  for (int i=2; i<8; i++){
-		  htim2.Instance->CCR1 = (i*100/7);
-		  	  HAL_Delay (5000);
 
-	  }
+    //  this is the lcd code
+
+    int pressed = 0;
+  HD44780_Init(3);
+  HD44780_Clear();
+  HD44780_Backlight();
+  char snum[5];
+  for ( int x = 20; x >=1 ; x-- )
+    {
+      itoa(x, snum, 12);
+      HD44780_Clear();
+      HD44780_SetCursor(0,0);
+      HD44780_PrintStr(snum);
+      HAL_Delay (1000);
+    }
+
+
+	  htim2.Instance->CCR1 = 12;
+		  HAL_Delay (2000);
+
+		  htim2.Instance->CCR1 = 24;
+		 	  HAL_Delay (2000);
+
+		 htim2.Instance->CCR1 = 36;
+		 HAL_Delay (2000);
+
   }
   /* USER CODE END 3 */
 }
