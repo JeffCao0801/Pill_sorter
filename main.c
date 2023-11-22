@@ -109,20 +109,6 @@ int main(void)
 
     //  this is the lcd code
 
-  HD44780_Init(3);
-  HD44780_Clear();
-  HD44780_Backlight();
-  char time;
-  for ( int x = 20; x >=1 ; x-- )
-    {
-      itoa(x, time, 9);
-      HD44780_Clear();
-      HD44780_SetCursor(0,0);
-      HD44780_PrintStr(time);
-      HAL_Delay (1000);
-    }
-
-
 	  htim2.Instance->CCR1 = 12;
 		  HAL_Delay (2000);
 
