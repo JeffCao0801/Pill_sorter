@@ -113,16 +113,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    for (int i=1; i<15; i++){
+		  htim2.Instance->CCR1 = (i*100/15);
+		  	  HAL_Delay (5000);
 
-	  htim2.Instance->CCR1 = 12;
-		  HAL_Delay (2000);
-
-		  htim2.Instance->CCR1 = 24;
-		 	  HAL_Delay (2000);
-
-		 htim2.Instance->CCR1 = 36;
-		 HAL_Delay (2000);
-
+	  }
   }
   /* USER CODE END 3 */
 }
